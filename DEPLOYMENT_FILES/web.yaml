@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: web
+  replicas: 1    
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: my-web-container
+        image: fardin31/docker_web_image:v1
+        ports:
+        - containerPort: 80

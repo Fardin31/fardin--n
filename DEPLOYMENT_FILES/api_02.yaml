@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-02-deployment
+spec:
+  selector:
+    matchLabels:
+      app: api-02
+  replicas: 1    
+  template:
+    metadata:
+      labels:
+        app: api-02
+    spec:
+      containers:
+      - name: api-02
+        image: fardin31/docker_api_02_image:v1
+        ports:
+        - containerPort: 80
